@@ -24,7 +24,7 @@ export default function About() {
   ]
 
   return (
-    <section id="about" className="py-24 md:py-32 px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-16 md:py-32 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -33,16 +33,16 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <div className="inline-block px-4 py-1.5 rounded-full glass text-xs font-semibold text-primary uppercase tracking-wider mb-6 border-primary/20">
+          <div className="inline-block px-3 py-1.5 rounded-full glass text-xs font-semibold text-primary uppercase tracking-wider mb-5 border-primary/20">
             About Me
           </div>
           <h2 className="section-heading">Passion Meets Precision</h2>
-          <p className="text-[var(--muted-color)] text-lg max-w-2xl mx-auto mt-4 leading-relaxed">
+          <p className="text-[var(--muted-color)] text-base sm:text-lg max-w-2xl mx-auto mt-4 leading-relaxed">
             A developer who believes in writing clean, efficient code and building products that make a difference.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -92,9 +92,9 @@ export default function About() {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="glass-card group"
               >
-                <div className="flex items-start gap-5">
-                  <div className={`p-3 rounded-xl bg-gradient-to-br ${item.color} text-white flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
-                    <item.icon size={24} />
+                <div className="flex items-start gap-3 sm:gap-5">
+                  <div className={`p-2 sm:p-3 rounded-xl bg-gradient-to-br ${item.color} text-white flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                    <item.icon size={18} />
                   </div>
                   <div className="flex-1">
                     <h4 className="text-lg font-bold text-[var(--text-color)] mb-1.5">{item.title}</h4>

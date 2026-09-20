@@ -53,25 +53,25 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 md:py-32 px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="py-16 md:py-32 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-10 sm:mb-20"
         >
-          <div className="inline-block px-4 py-1.5 rounded-full glass text-xs font-semibold text-primary uppercase tracking-wider mb-6 border-primary/20">
+          <div className="inline-block px-3 py-1.5 rounded-full glass text-xs font-semibold text-primary uppercase tracking-wider mb-5 border-primary/20">
             Technical Skills
           </div>
           <h2 className="section-heading">Technologies I Work With</h2>
-          <p className="text-[var(--muted-color)] text-lg max-w-2xl mx-auto mt-4">
+          <p className="text-[var(--muted-color)] text-base sm:text-lg max-w-2xl mx-auto mt-4">
             A comprehensive toolkit for building robust, scalable, and performant applications.
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {skills.map((skill, index) => (
             <motion.div
               key={skill.name}
@@ -90,11 +90,11 @@ export default function Skills() {
                 </div>
 
                 <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-xl font-bold text-[var(--text-color)]">{skill.name}</h3>
-                  <span className="text-2xl font-bold gradient-text">{skill.level}%</span>
+                  <h3 className="text-base sm:text-xl font-bold text-[var(--text-color)]">{skill.name}</h3>
+                  <span className="text-xl sm:text-2xl font-bold gradient-text">{skill.level}%</span>
                 </div>
 
-                <p className="text-[var(--muted-color)] text-sm mb-5 leading-relaxed">{skill.description}</p>
+                <p className="text-[var(--muted-color)] text-xs sm:text-sm mb-4 sm:mb-5 leading-relaxed">{skill.description}</p>
 
                 <div className="w-full h-2 bg-[var(--border-color)] rounded-full overflow-hidden mb-4">
                   <motion.div
@@ -119,8 +119,8 @@ export default function Skills() {
           ))}
         </div>
 
-        <div className="mt-20">
-          <h3 className="text-xl font-bold text-[var(--text-color)] mb-6 text-center">Tech Stack</h3>
+        <div className="mt-12 sm:mt-20">
+          <h3 className="text-base sm:text-xl font-bold text-[var(--text-color)] mb-6 text-center">Tech Stack</h3>
           <TechStack />
         </div>
       </div>

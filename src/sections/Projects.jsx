@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FiExternalLink, FiGithub, FiCode, FiCalendar, FiUsers, FiCopy } from 'react-icons/fi'
+import { FiExternalLink, FiGithub, FiCode, FiLayers, FiCalendar, FiCopy } from 'react-icons/fi'
 import { useState } from 'react'
 
 const projects = [
@@ -11,7 +11,7 @@ const projects = [
     github: 'https://github.com/vpssanthosh/mechanic-workshop',
     live: 'https://velayutham-workshop-wyrb-git-master-santhosh-7da8.vercel.app/?_vercel_share=UaAoS8BFZWke5kM9mjX39yqa1eRhiayw',
     image: '/mechanic-workshop.png',
-    stats: { stars: '8', forks: '3' },
+    type: 'Client Project',
     year: '2024',
     code: `const ServiceCard = ({ service }) => {
   return (
@@ -33,7 +33,7 @@ const projects = [
     gradient: 'from-green-500 to-emerald-600',
     github: 'https://github.com/vpssanthosh/smart-parking-ai',
     live: null,
-    stats: { stars: '42', forks: '12' },
+    type: 'AI / Computer Vision',
     year: '2025',
     code: `// AI-based parking slot detection
 async function detectSlots(frame) {
@@ -51,7 +51,7 @@ async function detectSlots(frame) {
     gradient: 'from-blue-500 to-indigo-600',
     github: 'https://github.com/vpssanthosh/campus-navigation',
     live: null,
-    stats: { stars: '35', forks: '8' },
+    type: 'Web Application',
     year: '2025',
     code: `function dijkstra(graph, start, end) {
   const distances = new Map();
@@ -74,7 +74,7 @@ async function detectSlots(frame) {
     gradient: 'from-red-500 to-rose-600',
     github: 'https://github.com/vpssanthosh/life-link',
     live: null,
-    stats: { stars: '56', forks: '14' },
+    type: 'System Design',
     year: '2026',
     code: `// Real-time SOS alert system
 class EmergencyCoordinator {
@@ -92,7 +92,7 @@ class EmergencyCoordinator {
   },
 ]
 
-function CodePreview({ code, gradient }) {
+export function CodePreview({ code, gradient }) {
   const [copied, setCopied] = useState(false)
 
   const handleCopy = () => {
@@ -102,8 +102,8 @@ function CodePreview({ code, gradient }) {
   }
 
   return (
-    <div className="relative mt-4 rounded-xl overflow-hidden bg-[#0d1117] border border-[var(--border-color)]">
-      <div className="flex items-center justify-between px-4 py-2 bg-[#161b22] border-b border-[var(--border-color)]">
+    <div className="relative mt-4 rounded-xl overflow-hidden bg-slate-100 dark:bg-[#0d1117] border border-[var(--border-color)]">
+      <div className="flex items-center justify-between px-4 py-2 bg-slate-200 dark:bg-[#161b22] border-b border-[var(--border-color)]">
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 rounded-full bg-red-500/80" />
           <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
@@ -118,7 +118,7 @@ function CodePreview({ code, gradient }) {
           <FiCopy size={14} />
         </button>
       </div>
-      <pre className="p-4 text-xs text-[#e6edf3] overflow-x-auto font-mono leading-relaxed">
+      <pre className="p-4 text-xs text-slate-800 dark:text-[#e6edf3] overflow-x-auto font-mono leading-relaxed">
         <code>{code}</code>
       </pre>
       {copied && (
@@ -134,24 +134,25 @@ function CodePreview({ code, gradient }) {
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 md:py-32 px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-16 md:py-32 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-20"
         >
-          <div className="inline-block px-4 py-1.5 rounded-full glass text-xs font-semibold text-primary uppercase tracking-wider mb-6 border-primary/20">
-            Portfolio          </div>
+          <div className="inline-block px-3 py-1.5 rounded-full glass text-xs font-semibold text-primary uppercase tracking-wider mb-5 sm:mb-6 border-primary/20">
+            Work
+          </div>
           <h2 className="section-heading">Featured Projects</h2>
-          <p className="text-[var(--muted-color)] text-lg max-w-2xl mx-auto mt-4">
+          <p className="text-[var(--muted-color)] text-base sm:text-lg max-w-2xl mx-auto mt-4">
             A selection of projects that showcase my skills and passion for development.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -213,12 +214,8 @@ export default function Projects() {
 
                 <div className="flex items-center gap-6 pt-5 border-t border-[var(--border-color)]">
                   <div className="flex items-center gap-1.5 text-xs text-[var(--muted-color)]">
-                    <FiUsers size={14} />
-                    <span>{project.stats.stars} stars</span>
-                  </div>
-                  <div className="flex items-center gap-1.5 text-xs text-[var(--muted-color)]">
-                    <FiCode size={14} />
-                    <span>{project.stats.forks} forks</span>
+                    <FiLayers size={14} />
+                    <span>{project.type}</span>
                   </div>
                   <div className="flex items-center gap-1.5 text-xs text-[var(--muted-color)]">
                     <FiCalendar size={14} />
@@ -228,13 +225,13 @@ export default function Projects() {
               </div>
 
               {project.image ? (
-                <div className="px-8 pb-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="px-8 pb-8 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500">
                   <div className="rounded-xl overflow-hidden border border-[var(--border-color)] shadow-lg">
                     <img src={project.image} alt={project.title} className="w-full h-auto" />
                   </div>
                 </div>
               ) : (
-                <div className="px-8 pb-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="px-8 pb-8 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500">
                   <CodePreview code={project.code} gradient={project.gradient} />
                 </div>
               )}

@@ -25,7 +25,7 @@ export default function Footer() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-xl glass hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-110"
+                className="p-3 rounded-xl glass hover:border-primary/50 hover:text-primary transition-all duration-300 hover:scale-110 min-w-[48px] min-h-[48px] flex items-center justify-center"
                 aria-label={social.label}
               >
                 <social.icon size={20} />

@@ -48,7 +48,7 @@ const certifications = [
 
 export default function Education() {
   return (
-    <section id="education" className="py-24 md:py-32 px-4 sm:px-6 lg:px-8">
+    <section id="education" className="py-16 md:py-32 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -66,9 +66,9 @@ export default function Education() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          <div className="space-y-8">
-            <h3 className="text-2xl font-bold text-[var(--text-color)] mb-8 flex items-center gap-3">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12">
+          <div className="space-y-6 sm:space-y-8">
+            <h3 className="text-xl sm:text-2xl font-bold text-[var(--text-color)] mb-6 sm:mb-8 flex items-center gap-3">
               <div className="p-2.5 rounded-xl bg-gradient-to-br from-primary to-cyan text-white">
                 <FiBook size={24} />
               </div>
@@ -85,24 +85,24 @@ export default function Education() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="relative pl-16 pb-8 last:pb-0"
+                  className="relative pl-14 sm:pl-16 pb-6 sm:pb-8 last:pb-0"
                 >
-                  <div className="absolute left-3.5 top-1 w-5 h-5 rounded-full bg-gradient-to-br from-primary to-cyan border-4 border-[var(--bg-color)]" />
+                  <div className="absolute left-4 sm:left-3.5 top-1 w-5 h-5 rounded-full bg-gradient-to-br from-primary to-cyan border-4 border-[var(--bg-color)]" />
 
-                  <div className="glass-card">
-                    <div className="flex items-start justify-between mb-3">
-                      <h4 className="text-lg font-bold text-[var(--text-color)] leading-tight">{edu.degree}</h4>
+                  <div className="glass-card p-4 sm:p-6">
+                    <div className="flex items-start justify-between mb-2 sm:mb-3">
+                      <h4 className="text-sm sm:text-base lg:text-lg font-bold text-[var(--text-color)] leading-tight">{edu.degree}</h4>
                       <span className="px-3 py-1 text-xs font-semibold rounded-full bg-primary/10 text-primary border border-primary/20 flex-shrink-0 ml-3">
                         {edu.gpa}
                       </span>
                     </div>
                     <p className="text-primary font-semibold text-sm mb-1">{edu.institution}</p>
-                    <div className="flex items-center gap-2 text-[var(--muted-color)] text-sm mb-3">
+                    <div className="flex items-center gap-2 text-[var(--muted-color)] text-xs sm:text-sm mb-2 sm:mb-3">
                       <FiCalendar size={14} />
                       {edu.year}
                     </div>
-                    <p className="text-[var(--muted-color)] text-sm mb-4 leading-relaxed">{edu.description}</p>
-                    <div className="flex flex-wrap gap-2">
+                    <p className="text-[var(--muted-color)] text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">{edu.description}</p>
+                  <div className="flex flex-wrap gap-2">
                       {edu.highlights.map(h => (
                         <span key={h} className="px-2.5 py-1 text-xs font-medium rounded-md bg-cyan/10 text-cyan border border-cyan/20">
                           {h}
@@ -116,7 +116,7 @@ export default function Education() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-bold text-[var(--text-color)] mb-8 flex items-center gap-3">
+            <h3 className="text-xl sm:text-2xl font-bold text-[var(--text-color)] mb-6 sm:mb-8 flex items-center gap-3">
               <div className="p-2.5 rounded-xl bg-gradient-to-br from-cyan to-primary text-white">
                 <FiAward size={24} />
               </div>
@@ -133,12 +133,12 @@ export default function Education() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="glass-card group hover:border-primary/30 transition-all duration-300"
                 >
-                  <div className="flex items-center gap-4">
-                    <div className={`p-3 rounded-xl bg-gradient-to-br ${cert.color} text-white flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
-                      <cert.icon size={22} />
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <div className={`p-2 sm:p-3 rounded-xl bg-gradient-to-br ${cert.color} text-white flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                      <cert.icon size={18} />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h4 className="text-sm font-bold text-[var(--text-color)] mb-0.5 truncate">{cert.title}</h4>
+                      <h4 className="text-xs sm:text-sm font-bold text-[var(--text-color)] mb-0.5 truncate">{cert.title}</h4>
                       <p className="text-xs text-[var(--muted-color)]">{cert.issuer}</p>
                     </div>
                     <span className="text-xs font-bold text-primary bg-primary/10 px-3 py-1.5 rounded-lg border border-primary/20 flex-shrink-0">

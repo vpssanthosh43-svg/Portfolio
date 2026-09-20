@@ -12,7 +12,7 @@ export default function Hero() {
   const [isDeleting, setIsDeleting] = useState(false)
   const [yearsCount, yearsRef] = useCounter(2, 1500)
   const [projectsCount, projectsRef] = useCounter(10, 1500)
-  const [techCount, techRef] = useCounter(5, 1500)
+  const [techCount, techRef] = useCounter(20, 1500)
 
   useEffect(() => {
     const currentTitle = titles[titleIndex]
@@ -40,12 +40,12 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 sm:px-6 lg:px-8 pt-20"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 sm:px-6 lg:px-8 pt-24 pb-24"
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-cyan/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-cyan/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-5xl mx-auto text-center relative z-10">
@@ -56,53 +56,53 @@ export default function Hero() {
           </span>
         </div>
 
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.95] mb-6 tracking-tight">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.95] mb-6 tracking-tight">
           Santhosh<span className="text-primary">.</span>V
         </h1>
 
-        <div className="h-16 md:h-20 mb-8">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold gradient-text">
+        <div className="h-14 sm:h-16 md:h-20 mb-6 sm:mb-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold gradient-text">
             {displayedTitle}
             <span className="inline-block w-1 h-8 md:h-12 bg-primary ml-1 animate-pulse align-middle" />
           </h2>
         </div>
 
-        <p className="text-lg sm:text-xl md:text-2xl text-[var(--muted-color)] max-w-3xl mx-auto mb-12 leading-relaxed font-light">
+        <p className="text-base sm:text-lg md:text-xl text-[var(--muted-color)] max-w-3xl mx-auto mb-8 sm:mb-12 leading-relaxed font-light">
           Crafting high-performance systems with C++ and building elegant user experiences with modern web technologies.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-          <a href="#projects" className="btn-primary">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-12 sm:mb-16">
+          <a href="#projects" className="btn-primary min-h-[48px]">
             View Projects
             <FiArrowRight />
           </a>
           <a
             href="#contact"
-            className="btn-outline"
+            className="btn-outline min-h-[48px]"
           >
             Get In Touch
           </a>
         </div>
 
-        <div className="flex items-center justify-center gap-12 text-[var(--muted-color)]">
+        <div className="flex items-center justify-center gap-6 sm:gap-12 text-[var(--muted-color)]">
           <div className="text-center" ref={yearsRef}>
-            <div className="text-3xl font-bold text-primary mb-1">{yearsCount}+</div>
-            <div className="text-sm font-medium uppercase tracking-wider">Years Exp.</div>
+            <div className="text-2xl sm:text-3xl font-bold text-primary mb-1">{yearsCount}+</div>
+            <div className="text-xs sm:text-sm font-medium uppercase tracking-wider">Years Coding</div>
           </div>
-          <div className="w-px h-12 bg-[var(--border-color)]" />
+          <div className="w-px h-10 sm:h-12 bg-[var(--border-color)]" />
           <div className="text-center" ref={projectsRef}>
-            <div className="text-3xl font-bold text-cyan mb-1">{projectsCount}+</div>
-            <div className="text-sm font-medium uppercase tracking-wider">Projects</div>
+            <div className="text-2xl sm:text-3xl font-bold text-cyan mb-1">{projectsCount}+</div>
+            <div className="text-xs sm:text-sm font-medium uppercase tracking-wider">Projects</div>
           </div>
-          <div className="w-px h-12 bg-[var(--border-color)]" />
+          <div className="w-px h-10 sm:h-12 bg-[var(--border-color)]" />
           <div className="text-center" ref={techRef}>
-            <div className="text-3xl font-bold text-accent mb-1">{techCount}+</div>
-            <div className="text-sm font-medium uppercase tracking-wider">Technologies</div>
+            <div className="text-2xl sm:text-3xl font-bold text-accent mb-1">{techCount}+</div>
+            <div className="text-xs sm:text-sm font-medium uppercase tracking-wider">Technologies</div>
           </div>
         </div>
       </div>
 
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2">
+      <div className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2">
         <div className="w-6 h-10 rounded-full border-2 border-primary/50 flex items-start justify-center p-1.5">
           <div className="w-1.5 h-2.5 rounded-full bg-primary animate-bounce" />
         </div>

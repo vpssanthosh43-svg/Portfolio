@@ -84,14 +84,14 @@ export default function Navbar() {
           <div className="flex items-center gap-1 md:hidden">
             <button
               onClick={toggleTheme}
-              className="p-2.5 rounded-xl hover:bg-primary/10 text-[var(--muted-color)] hover:text-primary transition-all duration-300"
+              className="p-3 rounded-xl hover:bg-primary/10 text-[var(--muted-color)] hover:text-primary transition-all duration-300 min-w-[44px] min-h-[44px] flex items-center justify-center"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? <FiSun size={20} /> : <FiMoon size={20} />}
             </button>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="p-2.5 rounded-xl hover:bg-primary/10 text-[var(--muted-color)] hover:text-primary transition-all duration-300"
+              className="p-3 rounded-xl hover:bg-primary/10 text-[var(--muted-color)] hover:text-primary transition-all duration-300 min-w-[44px] min-h-[44px] flex items-center justify-center"
               aria-label="Toggle menu"
             >
               {mobileOpen ? <FiX size={24} /> : <FiMenu size={24} />}
