@@ -49,10 +49,10 @@ export default function Hero() {
       </div>
 
       <div className="max-w-5xl mx-auto text-center relative z-10">
-        <div className="mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-primary/30">
-          <FiTerminal className="text-primary" size={18} />
-          <span className="text-sm font-semibold text-primary tracking-wide uppercase">
-            Available for Internships
+        <div className="mb-8 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-primary/10 to-cyan/10 border border-primary/30 shadow-lg shadow-primary/10">
+          <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+          <span className="text-sm font-semibold bg-gradient-to-r from-primary to-cyan bg-clip-text text-transparent tracking-wide uppercase">
+            Available for Internship
           </span>
         </div>
 
