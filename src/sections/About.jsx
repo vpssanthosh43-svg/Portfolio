@@ -72,7 +72,7 @@ export default function About() {
                   <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-primary via-cyan to-accent opacity-60 blur-sm" />
                   <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-br from-primary via-cyan to-accent" />
                   <img
-                    src="/profile.jpeg"
+                    src="/profile.png"
                     alt="Santhosh V — C++ & Front-End Developer"
                     className="relative w-36 h-44 sm:w-40 sm:h-48 rounded-xl object-cover object-top shadow-2xl"
                   />
